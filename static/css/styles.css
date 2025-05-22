@@ -1,0 +1,529 @@
+/* Base styling */
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+        flex: 1 0 auto;
+        width: 100%;
+        display: block;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Use border-box to include padding and border in width calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Containers */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.container.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the navbar */
+.navbar {
+  background-color: #2a2a2a;
+  position: relative;
+  padding: 1rem 0;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  z-index: 1001;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links li {
+        padding: 0.75rem 0;
+        border-top: 1px solid #444444;
+}
+
+.nav-links li a:hover {
+	color: #00ffcc;
+}
+
+.nav-links li:first-child {
+        border-top: none;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Style the blog */
+.blog-list {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.blog-list h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+.post-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.post-card .post-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.post-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.post-card a,
+.post-card a:visited {
+  color: #00ffcc;
+  text-decoration: none;
+}
+
+.post-card a:hover {
+  text-decoration: underline;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #00aaff;
+}
+
+/* Style the links */
+p a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+p a:visited {
+      color: #00aaff;
+}
+
+p a:hover {
+      color: #00ffcc;
+      text-decoration: underline;
+}
+
+a.active {
+	text-decoration: underline;
+	color: #00aaff;
+	font-weight: bold;
+}
+
+.blog-post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.7;
+}
+
+.blog-post h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post .post-date {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.blog-post .content {
+  text-align: left;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Style The Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh;
+  text-align: center;
+}
+
+/* Un-comment this if you want a gradient in your footer */
+/*.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(30,30,30,0), rgba(30,30,30,1));
+  pointer-events: none;
+}*/
+
+.hero .container {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid #444;
+}
+
+.hero p {
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  margin-bottom: 2rem;
+}
+
+/* Style the pages */
+
+.page {
+ /*max-width: 700px;*/
+  /*margin: 2rem auto;*/
+  text-align: center;
+  /*padding: 0 1rem;*/
+}
+
+.page h1 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.page .content {
+  line-height: 1.6;
+  color: #ccc;
+  text-align: left;
+}
+
+/* Style the button*/
+.main-btn {
+  background-color: #0a6bff;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  min-height: 56px;
+  min-width: 120px;
+  padding: 16px 20px;
+  text-align: center;
+  user-select: none;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-btn:hover {
+  background-color: #085ad1; /* slightly darker blue */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* gentle pop */
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.button-group .main-btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.btn-icon svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Style the Footer */
+footer {
+  background-color: #151515;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: auto;
+  flex-shrink: 0;
+  overflow: hidden;  
+}
+
+.footer-content p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-content a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  color: #00ffcc;
+  text-decoration: underline;
+}
+
+/* Add Mobile Responsiveness */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Style the nav-bar*/
+  .nav-links {
+ max-height: 0;
+ opacity: 0;
+ overflow: hidden;
+ border-radius: 0 0 8px 8px;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+ background-color: #2a2a2a;
+ display: none;
+ flex-direction: column;
+ padding: 1rem 0;
+ text-align: center;
+ transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+ z-index: 1001;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ transition: 
+  max-height 0.4s ease-in-out,
+  opacity 0.3s ease-in-out,
+  transform 0.3s ease-in-out;
+  transform: translateY(-10px);
+}
+
+  .nav-links.show {
+   display: flex;
+   max-height: 500px;
+   opacity: 1;
+   transform: translateY(0);
+  }
+}
+
+/* Style the buttons on small screens */
+@media (max-width: 500px) {
+  .hero-img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .main-btn {
+    font-size: 16px;
+  }
+}
+
+/* Style The Desktop */
+@media (min-width: 769px) {
+        .nav-links {
+                display: flex !important;
+                opacity: 1 !important;
+                max-height: none !important;
+                position: static;
+                flex-direction: row;
+                align-items: center;
+                padding: 0;
+        }
+
+        .nav-links li {
+                border: none;
+                padding: 0;
+        }
+
+        .menu-toggle {
+                display: none !important;
+        }
+}
+
+/* Style a code block just in case */
+.code-block {
+  display: block;
+  background-color: #1a1a1a;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  white-space: pre;
+}
+
+/* Add focus for keyboard nav */
+a:focus,
+.main-btn:focus {
+  outline: 2px solid #00ffcc;
+  outline-offset: 2px;
+}
+
+/* Add screen reader support */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Add styling for images */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Style the blog */
+
+.blog-post {
+  margin-bottom: 2rem;
+}
+
+.blog-post h2 {
+  margin-bottom: 0.5rem;
+  color: #00aaff;
+}
+
+.blog-post p {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.blog-post a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-post a:hover {
+  text-decoration: underline;
+}

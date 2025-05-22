@@ -1,0 +1,7 @@
+name = "Lost Packets"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "A dark-themed, hacker-style Hugo theme for developers."
+author = "Jason Evensen"
+homepage = "https://jasonevensen.com"
+min_version = "0.80.0"
